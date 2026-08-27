@@ -120,6 +120,33 @@ export const METHODS: Method[] = [
       'Coarse means coarse. Fines are what make it muddy.',
     ],
   },
+  {
+    id: 'moka-pot',
+    name: 'Moka Pot',
+    tagline: 'Stovetop, steam pressure',
+    ratio: '1:10',
+    dose: '18 g',
+    grind: 'fine',
+    water: '180 g, already boiling',
+    totalTime: 300,
+    body: 5,
+    clarity: 2,
+    effort: 3,
+    blurb:
+      'Steam pressure from the bottom chamber pushes water up through the coffee in one continuous shot. It is not espresso and it is not filter — it is thick, dark and closer to a stovetop lungo than either.',
+    steps: [
+      { at: 0, label: 'Fill hot', detail: 'Boiling water to just under the valve. Cold water stews the grounds.' },
+      { at: 30, label: 'Level the basket', detail: 'Fine grind, level, never tamped. Tamping chokes it.' },
+      { at: 60, label: 'Low heat', detail: 'Assemble with a towel, medium-low flame, lid open.' },
+      { at: 210, label: 'Listen', detail: 'A steady gurgle means it is done. A violent splutter means it is over.' },
+      { at: 270, label: 'Kill the heat', detail: 'Off the flame, base into cold water, pour straight away.' },
+    ],
+    tips: [
+      'Start with boiling water — the shorter the metal sits on the flame, the less scorched it tastes.',
+      'Never tamp. The basket only needs to be full and flat.',
+      'Stop at the gurgle. Everything after it is the bitter tail.',
+    ],
+  },
 ];
 
 export function methodById(id: string): Method | undefined {

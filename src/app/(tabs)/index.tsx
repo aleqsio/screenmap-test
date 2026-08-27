@@ -30,6 +30,9 @@ export default function MethodsScreen() {
         <Link href="/method/french-press" asChild>
           <MethodCard method={methodById('french-press')!} />
         </Link>
+        <Link href="/method/moka-pot" asChild>
+          <MethodCard method={methodById('moka-pot')!} />
+        </Link>
       </View>
 
       <Link href="/about" asChild>
