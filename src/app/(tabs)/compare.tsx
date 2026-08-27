@@ -61,13 +61,13 @@ export default function CompareScreen() {
         ))}
       </View>
 
-      <Link href="/grind" asChild>
+      <Link href="/water" asChild>
         <Pressable style={({ pressed }) => ({ opacity: pressed ? 0.75 : 1 })}>
           <View style={[styles.cta, { borderColor: c.line, backgroundColor: c.card }]}>
             <View style={styles.ctaText}>
-              <Type variant="heading">Grind guide</Type>
+              <Type variant="heading">Water</Type>
               <Type variant="caption" tone="muted">
-                What fine, medium and coarse actually mean
+                Temperature and minerals, the other 98% of the cup
               </Type>
             </View>
             <Type variant="title" tone="roast" style={styles.chevron}>
