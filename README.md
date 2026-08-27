@@ -14,6 +14,7 @@ on-screen.
 | `/method/v60` | Hario V60 — recipe, pour schedule, tips |
 | `/method/aeropress` | AeroPress |
 | `/method/french-press` | French Press |
+| `/method/moka-pot` | Moka Pot |
 | `/brew/[id]` | Brew timer for one method |
 | `/grind` | Grind guide |
 | `/about` | About, presented as a modal |

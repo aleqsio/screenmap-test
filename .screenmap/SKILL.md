@@ -17,7 +17,7 @@ The Methods tab has an "About this guide" row that opens a modal.
 
 ## Real params
 
-- `/brew/:id` → the id is a method id: `v60`, `aeropress` or `french-press`.
+- `/brew/:id` → the id is a method id: `v60`, `aeropress`, `french-press` or `moka-pot`.
   Use `v60`. Anything else falls back to the first method rather than erroring.
 
 ## Screens worth extra states
