@@ -42,6 +42,12 @@
       "typedRoutes": true,
       "reactCompiler": true
     },
-    "owner": "aleqsio"
+    "owner": "aleqsio",
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "199d76c1-9202-4e62-af52-1328d5f993ef"
+      }
+    }
   }
 }
