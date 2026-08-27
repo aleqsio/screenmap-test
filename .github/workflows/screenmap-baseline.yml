@@ -1,0 +1,26 @@
+name: screenmap · baseline
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  baseline:
+    runs-on: macos-26
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: aleqsio/screenmap@v1
+        with:
+          mode: baseline
+          expo_token: ${{ secrets.EXPO_TOKEN }}
+          agent_provider: claude
+          agent_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          flows_pr: "true"

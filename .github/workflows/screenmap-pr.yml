@@ -1,0 +1,24 @@
+name: screenmap · PR changes
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: write        # push bundles to the screenmaps branch
+  pull-requests: write   # the sticky comment
+jobs:
+  changes:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: aleqsio/screenmap@v1
+        with:
+          mode: pr
+          expo_token: ${{ secrets.EXPO_TOKEN }}
+          agent_provider: claude
+          agent_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
