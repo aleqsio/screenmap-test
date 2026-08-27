@@ -3,8 +3,6 @@
  * `src/app/method/`; the `id` is the route segment and the deep-link path.
  */
 
-import type { Href } from 'expo-router';
-
 export type Grind = 'fine' | 'medium-fine' | 'medium' | 'medium-coarse' | 'coarse';
 
 export type BrewStep = {
@@ -16,8 +14,6 @@ export type BrewStep = {
 
 export type Method = {
   id: string;
-  /** Typed route of this method's own screen under `src/app/method/`. */
-  href: Href;
   name: string;
   tagline: string;
   /** Grams of water per gram of coffee, written the way recipes are. */
@@ -49,7 +45,6 @@ export const GRIND_NOTES: Record<Grind, string> = {
 export const METHODS: Method[] = [
   {
     id: 'v60',
-    href: '/method/v60',
     name: 'Hario V60',
     tagline: 'Pour-over, cone filter',
     ratio: '1:16',
@@ -76,7 +71,6 @@ export const METHODS: Method[] = [
   },
   {
     id: 'aeropress',
-    href: '/method/aeropress',
     name: 'AeroPress',
     tagline: 'Immersion, pressed through paper',
     ratio: '1:14',
@@ -102,7 +96,6 @@ export const METHODS: Method[] = [
   },
   {
     id: 'french-press',
-    href: '/method/french-press',
     name: 'French Press',
     tagline: 'Full immersion, metal mesh',
     ratio: '1:15',

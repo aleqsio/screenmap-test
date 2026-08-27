@@ -1,16 +1,19 @@
-import { Link, Stack } from 'expo-router';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { Stack } from 'expo-router';
+import { type ReactNode } from 'react';
+import { StyleSheet, View } from 'react-native';
 
 import { Card, Eyebrow, Rule, Screen, Type } from '@/components/ui';
-import { Fonts, Radius, Spacing } from '@/constants/theme';
+import { Fonts, Spacing } from '@/constants/theme';
 import { formatClock, type Method } from '@/data/methods';
 import { usePalette } from '@/hooks/use-palette';
 
 /**
  * The body of every `src/app/method/<id>.tsx` screen. Each method gets its own
- * route file so the route map lists them by name instead of one `[id]` node.
+ * route file so the route map lists them by name instead of one `[id]` node,
+ * and each passes its own `timer` link so the navigation lives in the route
+ * file rather than in here.
  */
-export function MethodScreen({ method }: { method: Method }) {
+export function MethodScreen({ method, timer }: { method: Method; timer: ReactNode }) {
   const c = usePalette();
   return (
     <>
@@ -44,18 +47,7 @@ export function MethodScreen({ method }: { method: Method }) {
           ))}
         </Card>
 
-        <Link href={`/brew/${method.id}`} asChild>
-          <Pressable style={({ pressed }) => ({ opacity: pressed ? 0.85 : 1 })}>
-            <View style={[styles.cta, { backgroundColor: c.roast }]}>
-              <Type variant="heading" style={styles.ctaLabel}>
-                Start the brew timer
-              </Type>
-              <Type variant="mono" style={styles.ctaTime}>
-                {formatClock(method.totalTime)}
-              </Type>
-            </View>
-          </Pressable>
-        </Link>
+        {timer}
 
         <View style={styles.block}>
           <Eyebrow>The pour</Eyebrow>
@@ -109,16 +101,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: Spacing.three,
   },
-  cta: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: Spacing.four,
-    paddingVertical: Spacing.four,
-    borderRadius: Radius.md,
-  },
-  ctaLabel: { color: '#FFF8F1' },
-  ctaTime: { color: '#FFD9C4' },
   block: { gap: Spacing.three, paddingTop: Spacing.two },
   step: { flexDirection: 'row', gap: Spacing.three },
   stepMark: {

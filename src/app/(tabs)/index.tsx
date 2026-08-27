@@ -4,7 +4,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { MethodCard } from '@/components/method-card';
 import { Eyebrow, Screen, Type } from '@/components/ui';
 import { Spacing } from '@/constants/theme';
-import { METHODS } from '@/data/methods';
+import { METHODS, methodById } from '@/data/methods';
 import { usePalette } from '@/hooks/use-palette';
 
 export default function MethodsScreen() {
@@ -21,9 +21,15 @@ export default function MethodsScreen() {
       </View>
 
       <View style={styles.list}>
-        {METHODS.map((m) => (
-          <MethodCard key={m.id} method={m} />
-        ))}
+        <Link href="/method/v60" asChild>
+          <MethodCard method={methodById('v60')!} />
+        </Link>
+        <Link href="/method/aeropress" asChild>
+          <MethodCard method={methodById('aeropress')!} />
+        </Link>
+        <Link href="/method/french-press" asChild>
+          <MethodCard method={methodById('french-press')!} />
+        </Link>
       </View>
 
       <Link href="/about" asChild>
