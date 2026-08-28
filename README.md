@@ -43,3 +43,7 @@ Both need an `EXPO_TOKEN` repository secret (EAS builds the simulator dev
 client) and, optionally, `ANTHROPIC_API_KEY` so the agent can explore screens
 with no recorded flow. `.screenmap/config.json` holds the mechanical knobs and
 `.screenmap/SKILL.md` tells the agent how this app works.
+
+## Running the map
+
+Screenmap maps this app on every pull request. See .screenmap/config.json.
