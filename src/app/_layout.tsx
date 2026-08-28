@@ -18,8 +18,6 @@ export default function RootLayout() {
       <Stack screenOptions={{ headerTransparent: true, headerBlurEffect: 'regular' }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false, title: 'Brew' }} />
         <Stack.Screen name="method/v60" options={{ title: 'Hario V60' }} />
-        <Stack.Screen name="method/aeropress" options={{ title: 'AeroPress' }} />
-        <Stack.Screen name="method/french-press" options={{ title: 'French Press' }} />
         <Stack.Screen name="brew/[id]" options={{ title: 'Brew timer' }} />
         <Stack.Screen name="grind" options={{ title: 'Grind guide' }} />
         <Stack.Screen name="about" options={{ presentation: 'modal', title: 'About Brew' }} />
