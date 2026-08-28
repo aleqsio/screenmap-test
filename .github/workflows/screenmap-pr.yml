@@ -19,6 +19,7 @@ jobs:
       - uses: aleqsio/screenmap@v1
         with:
           mode: pr
+          publish: "false"
           expo_token: ${{ secrets.EXPO_TOKEN }}
           agent_provider: claude
           agent_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
