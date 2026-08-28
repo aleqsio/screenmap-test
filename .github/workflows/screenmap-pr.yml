@@ -5,6 +5,7 @@ on:
 permissions:
   contents: write        # push bundles to the screenmaps branch
   pull-requests: write   # the sticky comment
+  actions: write         # start the baseline if no map exists yet
 jobs:
   changes:
     runs-on: macos-26

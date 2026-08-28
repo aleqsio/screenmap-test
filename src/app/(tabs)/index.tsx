@@ -12,7 +12,7 @@ export default function MethodsScreen() {
   return (
     <Screen>
       <View style={styles.masthead}>
-        <Eyebrow>A field guide</Eyebrow>
+        <Eyebrow>A field guide · baseline</Eyebrow>
         <Type variant="display">Brew</Type>
         <Type variant="body" tone="muted">
           {METHODS.length} ways to get hot water through coffee, with the numbers that matter and
