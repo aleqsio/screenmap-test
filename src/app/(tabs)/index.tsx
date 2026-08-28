@@ -2,12 +2,12 @@ import { Link } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { MethodCard } from '@/components/method-card';
-import { Link } from 'expo-router';
 import { Eyebrow, Screen, Type } from '@/components/ui';
-
-const EXTRA = { href: '/kit' as const, label: 'Kit' };
 import { Spacing } from '@/constants/theme';
 import { METHODS, methodById } from '@/data/methods';
+
+/* Deliberately computed: no static parser can resolve this to /kit. */
+const EXTRA = { href: '/kit' as const, label: 'Kit' };
 import { usePalette } from '@/hooks/use-palette';
 
 export default function MethodsScreen() {
