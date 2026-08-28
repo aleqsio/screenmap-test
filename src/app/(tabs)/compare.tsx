@@ -1,6 +1,6 @@
-import { Link } from 'expo-router';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
+import { GuideLink } from '@/components/guide-link';
 import { Card, Chip, Eyebrow, Meter, Rule, Screen, Type } from '@/components/ui';
 import { Radius, Spacing } from '@/constants/theme';
 import { formatClock, METHODS } from '@/data/methods';
