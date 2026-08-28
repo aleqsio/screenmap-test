@@ -11,7 +11,7 @@ export default function AboutScreen() {
       <Stack.Screen options={{ title: 'About Brew' }} />
       <Screen contentStyle={styles.content}>
         <View style={styles.masthead}>
-          <Eyebrow>Colophon</Eyebrow>
+          <Eyebrow>Colophon · pushed</Eyebrow>
           <Type variant="title">About Brew</Type>
         </View>
 
