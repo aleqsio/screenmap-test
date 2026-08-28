@@ -65,7 +65,7 @@ export const METHODS: Method[] = [
     ],
     tips: [
       'Rinse the paper with boiling water or you will taste it.',
-      'If it drains under 2:30, grind finer. Over 3:30, coarser.',
+      'If it drains under 2:30, grind finer. Over 3:30, go coarser.',
       'A flat bed at the end means an even extraction.',
     ],
   },
