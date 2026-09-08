@@ -11,6 +11,11 @@ name: screenmap · android (trial)
 
 on:
   workflow_dispatch:
+    inputs:
+      full:
+        description: Recapture every screen instead of reusing unchanged ones
+        type: boolean
+        default: false
   pull_request:
     types: [opened, synchronize, reopened]
 
@@ -39,6 +44,7 @@ jobs:
         with:
           mode: baseline
           platform: android
+          full: ${{ inputs.full }}
           screenmaps_branch: screenmaps-android
           expo_token: ${{ secrets.EXPO_TOKEN }}
           flows_pr: "false"
