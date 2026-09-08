@@ -13,11 +13,11 @@ export default function GrindScreen() {
       <Stack.Screen options={{ title: 'Grind guide' }} />
       <Screen>
         <View style={styles.masthead}>
-          <Eyebrow>Particle size</Eyebrow>
+          <Eyebrow>The one variable</Eyebrow>
           <Type variant="display">Grind</Type>
           <Type variant="body" tone="muted">
-            Grind size sets how fast water can move through the bed. Everything else — dose,
-            temperature, time — is a correction on top of it.
+            Change one thing at a time and let it be this. Grind size sets how fast water moves
+            through the bed; dose, temperature and time are corrections on top of it.
           </Type>
         </View>
 
