@@ -1,0 +1,63 @@
+# Trial run of the Android capture lane (aleqsio/screenmap#8).
+#
+# Deliberately isolated from the iOS setup while the adb driver is unproven:
+#   screenmaps_branch  its own branch, because baseline paths carry no platform
+#                      yet — sharing `screenmaps` would overwrite the iOS map
+#   auto_baseline      off, so a PR run cannot dispatch the *iOS* baseline
+#                      workflow when it finds no Android map
+#   agent_api_key      omitted -> effort=deterministic: no tokens, and no agent
+#                      variability while the driver itself is what is on trial
+name: screenmap · android (trial)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: screenmap-android-${{ github.event.pull_request.number || 'baseline' }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  baseline:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: aleqsio/screenmap@android-support
+        with:
+          mode: baseline
+          platform: android
+          screenmaps_branch: screenmaps-android
+          expo_token: ${{ secrets.EXPO_TOKEN }}
+          flows_pr: "false"
+
+  changes:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: aleqsio/screenmap@android-support
+        with:
+          mode: pr
+          platform: android
+          screenmaps_branch: screenmaps-android
+          auto_baseline: "false"
+          expo_token: ${{ secrets.EXPO_TOKEN }}
