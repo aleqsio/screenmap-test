@@ -34,7 +34,7 @@ export default function BrewTimerScreen() {
 
   return (
     <>
-      <Stack.Screen options={{ title: 'Brew timer' }} />
+      <Stack.Screen options={{ title: 'Timer' }} />
       <Screen>
         <View style={styles.masthead}>
           <Eyebrow>{method.name} · {method.ratio}</Eyebrow>
