@@ -1,10 +1,24 @@
 {
-  "$comment": ".screenmap/config.json — mechanical knobs for the screenmap Action's deterministic lane.",
+  "$comment": ".screenmap/config.json \u2014 mechanical knobs for the screenmap Action's deterministic lane.",
   "scheme": "brew",
   "appName": "Brew",
   "device": "iPhone 17 Pro",
-  "waits": { "transition": 2000, "network": 3000, "boot": 15000 },
-  "suspects": { "depth": 2, "broadCap": 8 },
-  "agent": { "enabled": true, "maxScreens": 8, "provider": "claude" },
-  "params": { "id": "v60" }
+  "waits": {
+    "transition": 2000,
+    "network": 3000,
+    "boot": 15000
+  },
+  "suspects": {
+    "depth": 2,
+    "broadCap": 8
+  },
+  "agent": {
+    "enabled": true,
+    "maxScreens": 8,
+    "provider": "claude"
+  },
+  "params": {
+    "id": "v60"
+  },
+  "effort": "fast"
 }
