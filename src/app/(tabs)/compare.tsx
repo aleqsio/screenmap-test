@@ -1,6 +1,6 @@
-import { Link } from 'expo-router';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
+import { GuideLink } from '@/components/guide-link';
 import { Card, Chip, Eyebrow, Meter, Rule, Screen, Type } from '@/components/ui';
 import { Radius, Spacing } from '@/constants/theme';
 import { formatClock, METHODS } from '@/data/methods';
@@ -61,21 +61,7 @@ export default function CompareScreen() {
         ))}
       </View>
 
-      <Link href="/grind" asChild>
-        <Pressable style={({ pressed }) => ({ opacity: pressed ? 0.75 : 1 })}>
-          <View style={[styles.cta, { borderColor: c.line, backgroundColor: c.card }]}>
-            <View style={styles.ctaText}>
-              <Type variant="heading">Grind guide</Type>
-              <Type variant="caption" tone="muted">
-                What fine, medium and coarse actually mean
-              </Type>
-            </View>
-            <Type variant="title" tone="roast" style={styles.chevron}>
-              ›
-            </Type>
-          </View>
-        </Pressable>
-      </Link>
+      <GuideLink />
     </Screen>
   );
 }
