@@ -5,6 +5,9 @@ import { MethodCard } from '@/components/method-card';
 import { Eyebrow, Screen, Type } from '@/components/ui';
 import { Spacing } from '@/constants/theme';
 import { METHODS, methodById } from '@/data/methods';
+
+/* Deliberately computed: no static parser can resolve this to /kit. */
+const EXTRA = { href: '/kit' as const, label: 'Kit' };
 import { usePalette } from '@/hooks/use-palette';
 
 export default function MethodsScreen() {
@@ -12,7 +15,8 @@ export default function MethodsScreen() {
   return (
     <Screen>
       <View style={styles.masthead}>
-        <Eyebrow>A field guide</Eyebrow>
+        <Link href={EXTRA.href}><Type variant="label">{EXTRA.label}</Type></Link>
+          <Eyebrow>A field guide</Eyebrow>
         <Type variant="display">Brew</Type>
         <Type variant="body" tone="muted">
           {METHODS.length} ways to get hot water through coffee, with the numbers that matter and
