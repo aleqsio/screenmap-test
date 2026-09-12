@@ -32,7 +32,7 @@ export default function MethodsScreen() {
         </Link>
       </View>
 
-      <Link href="/about" asChild>
+      <Link href="/story" asChild>
         <Pressable style={({ pressed }) => ({ opacity: pressed ? 0.7 : 1 })}>
           <View style={[styles.footer, { borderTopColor: c.line }]}>
             <Type variant="caption" tone="muted">
