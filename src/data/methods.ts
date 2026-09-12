@@ -69,57 +69,6 @@ export const METHODS: Method[] = [
       'A flat bed at the end means an even extraction.',
     ],
   },
-  {
-    id: 'aeropress',
-    name: 'AeroPress',
-    tagline: 'Immersion, pressed through paper',
-    ratio: '1:14',
-    dose: '18 g',
-    grind: 'medium',
-    water: '250 g at 88 °C',
-    totalTime: 135,
-    body: 3,
-    clarity: 4,
-    effort: 2,
-    blurb:
-      'A syringe with a paper filter. It steeps like a French press and filters like a pour-over, and it is almost impossible to ruin — which is why it lives in every travel bag.',
-    steps: [
-      { at: 0, label: 'Fill', detail: 'All 250 g at once. Stir twice, cap it.' },
-      { at: 20, label: 'Steep', detail: 'Leave it alone. No stirring, no swirling.' },
-      { at: 100, label: 'Press', detail: 'Thirty seconds of steady weight. Stop at the hiss.' },
-    ],
-    tips: [
-      'Cooler water than you think — 88 °C keeps the bitterness out.',
-      'Inverted brewing buys you a longer steep, at the cost of a scarier flip.',
-      'One paper filter is plenty; two just slows the press.',
-    ],
-  },
-  {
-    id: 'french-press',
-    name: 'French Press',
-    tagline: 'Full immersion, metal mesh',
-    ratio: '1:15',
-    dose: '30 g',
-    grind: 'coarse',
-    water: '450 g at 96 °C',
-    totalTime: 480,
-    body: 5,
-    clarity: 2,
-    effort: 1,
-    blurb:
-      'Grounds sit in water for four minutes and a metal screen holds most of them back. The oils come through, so the cup is heavy and round — and there is always a little silt at the bottom.',
-    steps: [
-      { at: 0, label: 'Pour', detail: 'All the water in one go. Do not stir yet.' },
-      { at: 240, label: 'Break the crust', detail: 'Stir the raft once, skim the foam off the top.' },
-      { at: 300, label: 'Settle', detail: 'Wait. The fines are sinking; let them.' },
-      { at: 420, label: 'Plunge and pour', detail: 'Press slowly, decant everything immediately.' },
-    ],
-    tips: [
-      'Never leave the coffee sitting on the grounds — decant the whole pot.',
-      'Skimming after the stir removes most of the silt.',
-      'Coarse means coarse. Fines are what make it muddy.',
-    ],
-  },
 ];
 
 export function methodById(id: string): Method | undefined {
